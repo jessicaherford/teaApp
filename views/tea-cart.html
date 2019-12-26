@@ -1,0 +1,19 @@
+<div id="teaListWrapper">
+	<p>Please click on buy button to buy the tea.</p>
+	<ul class="list-unstyled">
+		<li class="tea" ng-repeat="tea in cart"
+			style="background: white url('{{tea.imageUrl}}') no-repeat">
+			<div class="tea-details clearfix">
+        <h4>Teas in Cart:</h4>
+        <h3>{{tea.name}}</h3>
+        <p>{{tea.price | currency:'USD$'}}</p>
+        <ul class="list-unstyled list-inline">
+          <li>Ingredients: {{tea.ingredients}}</li>
+				</ul>
+				<p>{{tea.ingredients}}</p>
+				<button class="btn btn-info pull-right" ng-click="buy(tea)">Buy</button>
+        <button class="btn btn-danger pull-right" ng-click="remove(tea)">Remove</button>
+			</div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,22 @@
+<div id="teaListWrapper">
+	<form role="form">
+	  <div class="form-group">
+		<input type="text" class="form-control" placeholder="Search here..."
+			ng-model="searchStr">
+	  </div>
+	</form>
+	<ul class="list-unstyled">
+		<li class="tea" ng-repeat="tea in teas | filter:searchStr"
+			style="background: white url('{{tea.imageUrl}}') no-repeat">
+			<div class="tea-details clearfix">
+        <h4>Teas:</h4>
+				<h3>{{tea.name}}</h3>
+				<p>{{tea.price | currency:' USD$ ': 2 }}</p>
+				<ul class="list-unstyled list-inline">
+					<li>Ingredients: {{tea.ingredients}}</li>
+				</ul>
+				<button class="btn btn-info pull-right" ng-click="addToCart(tea)">Add to Cart</button>
+			</div>
+		</li>
+	</ul>
+</div>
